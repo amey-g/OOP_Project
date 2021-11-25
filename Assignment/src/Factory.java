@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.concurrent.TimeUnit;
-
 
 public class Factory 
 {
@@ -171,14 +169,10 @@ public class Factory
 		{
 			private int threadNumber;//specifies thread number
 			Car C;	
-			int timer_s;//to record time in seconds for the program
-			int timer_m;//to record time in minutes for the program
 			AssemblyLine(Car C,int threadNumber)//constructor
 			{
 				this.C = C;
 				this.threadNumber=threadNumber;
-				timer_s=0;
-				timer_m=0;
 			}
 			
 			//calling this function would start the procedure on the assembly line
@@ -195,25 +189,6 @@ public class Factory
 				
 				try 
 				{
-					timer_s+=chas_time;
-					if(timer_s>=60)
-					{
-						timer_s/=60;
-						timer_m++;
-					}
-//					String s;
-//					if(timer<10)
-//					{
-//						s="00:0"+timer;
-//					}
-//					else if(timer<=59)
-//					{
-//						s="00:"+timer;
-//					}
-//					else
-//					{
-//						
-//					}
 					final long duration = (System.nanoTime() - startTime);
 					String dur = getHumanReadableTime(duration); 
 					System.out.println(dur +" Chassis fitted at car on Assembly Line " +threadNumber);
@@ -227,12 +202,6 @@ public class Factory
 				
 				try 
 				{
-					timer_s+=eng_time;
-					if(timer_s>=60)
-					{
-						timer_s/=60;
-						timer_m++;
-					}
 					final long duration = (System.nanoTime() - startTime);
 					String dur = getHumanReadableTime(duration); 
 					System.out.println(dur +" Engine fitted at car on Assembly Line " +threadNumber);
@@ -245,12 +214,6 @@ public class Factory
 				
 				try 
 				{
-					timer_s+=susp_time;
-					if(timer_s>=60)
-					{
-						timer_s/=60;
-						timer_m++;
-					}
 					final long duration = (System.nanoTime() - startTime);
 					String dur = getHumanReadableTime(duration); 
 					System.out.println(dur +" Suspension fitted at car on Assembly Line " +threadNumber);
@@ -263,12 +226,6 @@ public class Factory
 				
 				try 
 				{
-					timer_s+=tyre_time;
-					if(timer_s>=60)
-					{
-						timer_s/=60;
-						timer_m++;
-					}
 					final long duration = (System.nanoTime() - startTime);
 					String dur = getHumanReadableTime(duration); 
 					System.out.println(dur +" Tyres fitted at car on Assembly Line " +threadNumber);
@@ -281,12 +238,6 @@ public class Factory
 				
 				try 
 				{
-					timer_s+=ac_time;
-					if(timer_s>=60)
-					{
-						timer_s/=60;
-						timer_m++;
-					}
 					final long duration = (System.nanoTime() - startTime);
 					String dur = getHumanReadableTime(duration); 
 					System.out.println(dur +" AC fitted at car on Assembly Line " +threadNumber);
@@ -299,12 +250,6 @@ public class Factory
 				
 				try 
 				{
-					timer_s+=p_time;
-					if(timer_s>=60)
-					{
-						timer_s/=60;
-						timer_m++;
-					}
 					final long duration = (System.nanoTime() - startTime);
 					String dur = getHumanReadableTime(duration); 
 					System.out.println(dur +" Painting done on Assembly Line " +threadNumber);
